@@ -24,10 +24,10 @@ import numeral = require('numeral');
 			<button md-raised-button (click)="stop()">Stop</button>
 		</div>
 		<form>
-			<md-input [(ngModel)]="salary" placeholder="Average Yearly Salary">
+			<md-input [(ngModel)]="salary" (ngModelChange)="update()" placeholder="Average Yearly Salary">
 				<span md-prefix>$</span>
 			</md-input>
-			<md-input [(ngModel)]="people" placeholder="People in Meeting"></md-input>
+			<md-input [(ngModel)]="people" (ngModelChange)="update()" placeholder="People in Meeting"></md-input>
 		</form>
 		<p>{{numeral(hourly).format('$0,0.00')}}/hour</p>
 	`,
@@ -50,8 +50,7 @@ export class MeetingCost {
 	millisecondly = 0;
 	elapsed = 0;
 
-	private _salary: number;
-
+	salary = 100000;
 	people = 10;
 
 	time = -1;
@@ -61,24 +60,14 @@ export class MeetingCost {
 	constructor() {
 		window['app'] = this;
 
-		this.salary = 100000;
-
-		setInterval(this.update.bind(this), 50);
+		setInterval(() => {
+			this.elapsed = this.time < 0 ? 0 : Date.now() - this.time;
+		}, 50);
 		this.update();
 	}
 
 	update() {
-		this.elapsed = this.time < 0 ? 0 : Date.now() - this.time;
-	}
-
-	get salary() {
-		return this._salary;
-	}
-
-	set salary(value: number) {
-		this._salary = value;
-
-		this.hourly = this._salary * this.people / this.days / this.hours;
+		this.hourly = this.salary * this.people / this.days / this.hours;
 		this.millisecondly =  this.hourly / 60 / 60 / 1000;
 	}
 
