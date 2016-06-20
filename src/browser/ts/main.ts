@@ -23,10 +23,10 @@ import { MdButton } from '@angular2-material/button';
 			<button md-raised-button (click)="stop()">Stop</button>
 		</div>
 		<form>
-			<md-input type="number" [(ngModel)]="salary" placeholder="Average Yearly Salary">
+			<md-input [(ngModel)]="salary" placeholder="Average Yearly Salary">
 				<span md-prefix>$&nbsp;</span>
 			</md-input>
-			<md-input type="number" [(ngModel)]="people" placeholder="People in Meeting"></md-input>
+			<md-input [(ngModel)]="people" placeholder="People in Meeting"></md-input>
 		</form>
 		<p>Hourly Usage: {{money.format(hourly)}}</p>
 	`,
