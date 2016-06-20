@@ -1,9 +1,10 @@
 'use strict';
 
-require('../css/style.css');
-require('core-js');
+import '../css/style.css';
+import 'core-js';
+import 'reflect-metadata';
+
 require('zone.js');
-require('reflect-metadata');
 
 import { bootstrap } from '@angular/platform-browser-dynamic';
 import { Component, enableProdMode } from '@angular/core';

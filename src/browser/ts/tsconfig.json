@@ -10,6 +10,7 @@
 	},
 	"files": [
 		"../../../typings/index.d.ts",
+		"../dts/core-js.d.ts",
 		"main.ts"
 	]
 }

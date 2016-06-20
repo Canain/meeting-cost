@@ -5,7 +5,6 @@
     "clean-css": "registry:dt/clean-css#3.4.9+20160316155526",
     "connect": "registry:dt/connect#3.4.0+20160317120654",
     "connect-livereload": "registry:dt/connect-livereload#0.5.3+20160317120654",
-    "core-js": "registry:dt/core-js#0.0.0+20160317120654",
     "express": "registry:dt/express#4.0.0+20160317120654",
     "express-serve-static-core": "registry:dt/express-serve-static-core#0.0.0+20160322035842",
     "gulp": "registry:dt/gulp#3.8.0+20160316155526",
