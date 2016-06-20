@@ -1,0 +1,49 @@
+{
+  "name": "meeting-cost",
+  "version": "1.0.0",
+  "description": "Calculate money equivalent to meeting",
+  "main": "app.js",
+  "scripts": {
+    "postinstall": "typings install",
+    "start": "gulp watch"
+  },
+  "author": "Shuyang Chen <shuyang_chen@intuit.com>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@angular/common": "^2.0.0-rc.2",
+    "@angular/compiler": "^2.0.0-rc.2",
+    "@angular/core": "^2.0.0-rc.2",
+    "@angular/platform-browser": "^2.0.0-rc.2",
+    "@angular/platform-browser-dynamic": "^2.0.0-rc.2",
+    "@angular2-material/button": "^2.0.0-alpha.5-2",
+    "@angular2-material/core": "^2.0.0-alpha.5-2",
+    "@angular2-material/input": "^2.0.0-alpha.5-2",
+    "@angular2-material/slide-toggle": "^2.0.0-alpha.5-2",
+    "connect-livereload": "^0.5.4",
+    "core-js": "^2.4.0",
+    "express": "^4.13.4",
+    "reflect-metadata": "^0.1.3",
+    "rxjs": "^5.0.0-beta.6",
+    "zone.js": "^0.6.6"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "css-loader": "^0.23.1",
+    "gulp": "^3.9.1",
+    "gulp-htmlmin": "^2.0.0",
+    "gulp-live-server": "0.0.29",
+    "gulp-typescript": "^2.13.4",
+    "gulp-uglify": "^1.5.3",
+    "json-loader": "^0.5.4",
+    "merge2": "^1.0.2",
+    "postcss-loader": "^0.9.1",
+    "precss": "^1.4.0",
+    "run-sequence": "^1.2.0",
+    "style-loader": "^0.13.1",
+    "ts-loader": "^0.8.2",
+    "typings": "^1.0.4",
+    "webpack": "^1.13.1",
+    "webpack-stream": "^3.2.0"
+  }
+}

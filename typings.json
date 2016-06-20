@@ -1,0 +1,26 @@
+{
+  "name": "meeting-cost",
+  "dependencies": {},
+  "globalDependencies": {
+    "clean-css": "registry:dt/clean-css#3.4.9+20160316155526",
+    "connect": "registry:dt/connect#3.4.0+20160317120654",
+    "connect-livereload": "registry:dt/connect-livereload#0.5.3+20160317120654",
+    "core-js": "registry:dt/core-js#0.0.0+20160317120654",
+    "express": "registry:dt/express#4.0.0+20160317120654",
+    "express-serve-static-core": "registry:dt/express-serve-static-core#0.0.0+20160322035842",
+    "gulp": "registry:dt/gulp#3.8.0+20160316155526",
+    "gulp-htmlmin": "registry:dt/gulp-htmlmin#1.3.0+20160316155526",
+    "gulp-typescript": "registry:dt/gulp-typescript#0.0.0+20160317120654",
+    "html-minifier": "registry:dt/html-minifier#1.1.1+20160316155526",
+    "merge2": "registry:dt/merge2#0.3.6+20160316155526",
+    "mime": "registry:dt/mime#0.0.0+20160316155526",
+    "node": "registry:dt/node#6.0.0+20160514165920",
+    "orchestrator": "registry:dt/orchestrator#0.0.0+20160316155526",
+    "q": "registry:dt/q#0.0.0+20160417152954",
+    "relateurl": "registry:dt/relateurl#0.2.6+20160316155526",
+    "serve-static": "registry:dt/serve-static#0.0.0+20160501131543",
+    "source-map": "registry:dt/source-map#0.0.0+20160317120654",
+    "uglify-js": "registry:dt/uglify-js#2.6.1+20160316155526",
+    "webpack": "registry:dt/webpack#1.12.9+20160321060707"
+  }
+}
