@@ -60,10 +60,14 @@ export class MeetingCost {
 	constructor() {
 		window['app'] = this;
 
-		setInterval(() => {
-			this.elapsed = this.time < 0 ? 0 : Date.now() - this.time;
-		}, 50);
 		this.update();
+		this.refresh();
+	}
+
+	refresh() {
+		this.elapsed = this.time < 0 ? 0 : Date.now() - this.time;
+
+		requestAnimationFrame(this.refresh.bind(this));
 	}
 
 	update() {
