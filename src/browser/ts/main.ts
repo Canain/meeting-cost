@@ -17,16 +17,18 @@ import { MdButton } from '@angular2-material/button';
 	selector: 'meeting-cost',
 	template: `
 		<h1>{{formatted}}</h1>
+		<p>Elapsed Time: {{(diff / 1000).toFixed(0)}} seconds</p>
 		<div>
 			<button md-raised-button (click)="start()">Start</button>
 			<button md-raised-button (click)="stop()">Stop</button>
 		</div>
 		<form>
-			<md-input [(ngModel)]="salary" placeholder="Average Yearly Salary">
+			<md-input type="number" [(ngModel)]="salary" placeholder="Average Yearly Salary">
 				<span md-prefix>$&nbsp;</span>
 			</md-input>
-			<md-input [(ngModel)]="people" placeholder="People in Meeting"></md-input>
+			<md-input type="number" [(ngModel)]="people" placeholder="People in Meeting"></md-input>
 		</form>
+		<p>Hourly Usage: {{money.format(hourly)}}</p>
 	`,
 	directives: [ MdInput, MdSlideToggle, MdButton ],
 	styles: [`
@@ -43,8 +45,9 @@ export class MeetingCost {
 	days = 260;
 	hours = 8;
 	
-	formatted = '$0.00';
-	edit = true;
+	formatted: string;
+	hourly: number;
+	diff: number;
 
 	salary = 100000;
 	people = 10;
@@ -58,21 +61,18 @@ export class MeetingCost {
 	});
 
 	constructor() {
-		setInterval(() => {
-			if (this.time < 0) {
-				this.formatted = '$0.00';
-				return;
-			}
+		setInterval(this.update.bind(this), 50);
+		this.update();
+	}
 
-			const diff = performance.now() - this.time;
+	update() {
+		this.diff = this.time < 0 ? 0 : performance.now() - this.time;
 
-			const hourly = this.salary * this.people / this.days / this.hours;
+		this.hourly = this.salary * this.people / this.days / this.hours;
 
-			const milisecondly = hourly / 60 / 60 / 1000;
+		const milisecondly = this.hourly / 60 / 60 / 1000;
 
-			this.formatted = this.money.format(diff * milisecondly);
-
-		}, 50);
+		this.formatted = this.money.format(this.diff * milisecondly);
 	}
 
 	start() {
