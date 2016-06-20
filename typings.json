@@ -15,6 +15,7 @@
     "merge2": "registry:dt/merge2#0.3.6+20160316155526",
     "mime": "registry:dt/mime#0.0.0+20160316155526",
     "node": "registry:dt/node#6.0.0+20160514165920",
+    "numeraljs": "registry:dt/numeraljs#0.0.0+20160316155526",
     "orchestrator": "registry:dt/orchestrator#0.0.0+20160316155526",
     "q": "registry:dt/q#0.0.0+20160417152954",
     "relateurl": "registry:dt/relateurl#0.2.6+20160316155526",
