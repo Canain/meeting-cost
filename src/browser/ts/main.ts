@@ -1,9 +1,7 @@
 'use strict';
 
 require('../css/style.css');
-
 require('core-js');
-
 require('zone.js');
 require('reflect-metadata');
 
@@ -12,7 +10,7 @@ import { Component, enableProdMode } from '@angular/core';
 import { MdInput } from '@angular2-material/input';
 import { MdSlideToggle } from '@angular2-material/slide-toggle';
 import { MdButton } from '@angular2-material/button';
-import numeral = require('numeral');
+import * as numeral from 'numeral';
 
 @Component({
 	selector: 'meeting-cost',

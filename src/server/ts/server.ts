@@ -1,6 +1,6 @@
-import express = require('express');
-import http = require('http');
-import livereload = require('connect-livereload');
+import * as express from 'express';
+import * as http from 'http';
+import * as livereload from 'connect-livereload';
 
 const port = 8080;
 
