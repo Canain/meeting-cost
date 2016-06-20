@@ -1,5 +1,3 @@
-'use strict';
-
 import '../css/style.css';
 import 'core-js';
 import 'reflect-metadata';
