@@ -6,8 +6,9 @@ const ts = require('gulp-typescript');
 const merge = require('merge2');
 const gls = require('gulp-live-server');
 const runSequence = require('run-sequence');
-const uglify = require('gulp-uglify');
 const htmlmin = require('gulp-htmlmin');
+const UglifyJS = require('uglify-js');
+const fs = require('fs');	
 
 gulp.task('webpack', () => {
 	return gulp.src('src/browser/ts/main.ts')
@@ -21,11 +22,33 @@ gulp.task('webpack-prod', () => {
 		.pipe(gulp.dest('./'));
 });
 
-gulp.task('uglify-prod', () => {
-	return gulp.src('www/bundle.js').pipe(uglify({
-		mangle: true,
-		compress: true
-	})).pipe(gulp.dest('www'));
+gulp.task('uglify-prod', done => {
+	const result = UglifyJS.minify('www/bundle.js', {
+		inSourceMap: "www/bundle.js.map",
+		outSourceMap: "bundle.js.map",
+		compress: {
+			sequences: true,
+			properties: true,
+			dead_code: true,
+			drop_debugger: true,
+			conditionals: true,
+			comparisons: true,
+			evaluate: true,
+			booleans: true,
+			loops: true,
+			unused: true,
+			hoist_funs: true,
+			if_return: true,
+			join_vars: true,
+			cascade: true,
+			warnings: true,
+			negate_iife: true
+		},
+		mangle: true
+	});
+	fs.writeFile('www/bundle.js', result.code, () => {
+		fs.writeFile('www/bundle.js.map', result.map, done);
+	});
 });
 
 gulp.task('build-prod', done => {

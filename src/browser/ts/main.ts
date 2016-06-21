@@ -72,7 +72,9 @@ export class MeetingCost {
 	}
 
 	start() {
-		this.time = Date.now();
+		if (this.time < 0) {
+			this.time = Date.now();
+		}
 	}
 
 	reset() {
