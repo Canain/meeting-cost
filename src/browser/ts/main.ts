@@ -13,19 +13,19 @@ import * as numeral from 'numeral';
 @Component({
 	selector: 'meeting-cost',
 	template: `
-		<h1>{{numeral(millisecondly * elapsed).format('$0,0.00')}}</h1>
-		<p>Elapsed Time: {{numeral(elapsed / 1000).format('00:00:00')}}</p>
+		<h1>{{numeral((millisecondly * elapsed) || 0).format('$0,0.00')}}</h1>
+		<p>Elapsed Time: {{numeral((elapsed / 1000) || 0).format('00:00:00')}}</p>
 		<div>
 			<button md-raised-button (click)="start()">Start</button>
 			<button md-raised-button (click)="reset()">Reset</button>
 		</div>
 		<form>
-			<md-input [(ngModel)]="salary" (ngModelChange)="update()" placeholder="Average Yearly Salary">
+			<md-input type="number" [(ngModel)]="salary" (ngModelChange)="update()" placeholder="Average Yearly Salary">
 				<span md-prefix>$</span>
 			</md-input>
-			<md-input [(ngModel)]="people" (ngModelChange)="update()" placeholder="People in Meeting"></md-input>
+			<md-input type="number" [(ngModel)]="people" (ngModelChange)="update()" placeholder="People in Meeting"></md-input>
 		</form>
-		<p>{{numeral(hourly).format('$0,0.00')}}/hour</p>
+		<p>{{numeral(hourly || 0).format('$0,0.00')}}/hour</p>
 	`,
 	directives: [ MdInput, MdButton ],
 	styles: [`
