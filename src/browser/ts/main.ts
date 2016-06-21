@@ -18,7 +18,7 @@ import * as numeral from 'numeral';
 		<p>Elapsed Time: {{numeral(elapsed / 1000).format('00:00:00')}}</p>
 		<div>
 			<button md-raised-button (click)="start()">Start</button>
-			<button md-raised-button (click)="stop()">Stop</button>
+			<button md-raised-button (click)="reset()">Reset</button>
 		</div>
 		<form>
 			<md-input [(ngModel)]="salary" (ngModelChange)="update()" placeholder="Average Yearly Salary">
@@ -76,7 +76,7 @@ export class MeetingCost {
 		this.time = Date.now();
 	}
 
-	stop() {
+	reset() {
 		this.time = -1;
 	}
 }
