@@ -112,3 +112,6 @@ bundle.js.map
 
 /server
 /www/**/*.html
+
+platforms
+plugins

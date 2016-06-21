@@ -30,7 +30,7 @@ import * as numeral from 'numeral';
 	directives: [ MdInput, MdButton ],
 	styles: [`
 		h1 {
-			font-size: 15em;
+			font-size: 10vw;
 		}
 		form {
 			margin-top: 20px;
