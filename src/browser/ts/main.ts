@@ -7,7 +7,6 @@ require('zone.js');
 import { bootstrap } from '@angular/platform-browser-dynamic';
 import { Component, enableProdMode } from '@angular/core';
 import { MdInput } from '@angular2-material/input';
-import { MdSlideToggle } from '@angular2-material/slide-toggle';
 import { MdButton } from '@angular2-material/button';
 import * as numeral from 'numeral';
 
@@ -28,7 +27,7 @@ import * as numeral from 'numeral';
 		</form>
 		<p>{{numeral(hourly).format('$0,0.00')}}/hour</p>
 	`,
-	directives: [ MdInput, MdSlideToggle, MdButton ],
+	directives: [ MdInput, MdButton ],
 	styles: [`
 		h1 {
 			font-size: 15em;
